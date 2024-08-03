@@ -12,16 +12,15 @@
             <column name="firstname" type="varchar(64)"/>
             <column name="lastname" type="varchar(64)"/>
             <column name="phone" type="varchar(12)"/>
-            <column name="phone" type="varchar(12)"/>
             <column name="email" type="varchar(128)"/>
             <column name="birthdate" type="date"/>
             <column name="favorite_director" type="varchar(128)"/>
             <column name="favorite_scenarist" type="varchar(128)"/>
             <column name="favorite_actors" type="varchar(128)"/>
             <column name="last_login" type="timestamp"/>
-            <column name="is_admin" type="boolean"/>
-            <column name="is_blocked" type="boolean"/>
             <column name="is_active" type="boolean"/>
+            <column name="is_blocked" type="boolean"/>
+            <column name="is_admin" type="boolean"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>
