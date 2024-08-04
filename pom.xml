@@ -31,9 +31,9 @@
 
         <feign.client.version>4.1.1</feign.client.version>
         <hibernate.core.version>6.5.2.Final</hibernate.core.version>
-        <hibernate.entitymanager.version>5.2.3.Final</hibernate.entitymanager.version>
+        <hibernate.entitymanager.version>5.4.23.Final</hibernate.entitymanager.version>
 
-        <application.database.url>jdbc:postgresql://localhost:5432/postgres</application.database.url>
+        <application.database.url>jdbc:postgresql://localhost:5432/movie_hub_database</application.database.url>
         <application.database.username>postgres</application.database.username>
         <application.database.password>1901422</application.database.password>
         <application.database.hibernate.ddl>update</application.database.hibernate.ddl>
