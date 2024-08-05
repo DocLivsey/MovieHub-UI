@@ -1,4 +1,4 @@
-# MovieHub API
+# MovieHub UI
 
 ### Cinema library web application "MovieHub"
 
