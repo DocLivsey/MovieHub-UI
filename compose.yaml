@@ -4,6 +4,10 @@ x-spring-api-variables: &api-variables
   VERSION: v1.0
   PATH_BASE: /api
   PATH_MOVIES: /movies
+x-postgres-variables: &db-variables
+  POSTGRES_DB: movie_hub_database
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: reallystrongpassword
 services:
   ui:
     build:
@@ -17,9 +21,6 @@ services:
 
   db:
      image: postgres:15
-     environment:
-       POSTGRES_DB: mydb
-       POSTGRES_USER: user
-       POSTGRES_PASSWORD: pass
+     environment: *db-variables
      ports:
        - "5432:5432"
