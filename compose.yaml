@@ -4,6 +4,11 @@ x-spring-api-variables: &api-variables
   VERSION: v1.0
   PATH_BASE: /api
   PATH_MOVIES: /movies
+  DB_HOST: db
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: reallystrongpassword
+  HIBERNATE_DDL: update
+  LIQUIBASE_CHANGE_LOGS: classpath:/db/changelog/db.changelog-master.xml
 x-postgres-variables: &db-variables
   POSTGRES_DB: movie_hub_database
   POSTGRES_USER: postgres
