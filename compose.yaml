@@ -5,6 +5,7 @@ x-spring-api-variables: &api-variables
   PATH_BASE: /api
   PATH_MOVIES: /movies
   DB_HOST: db
+  DB_URL: jdbc:postgresql://db:5432/movie_hub_database
   POSTGRES_USER: postgres
   POSTGRES_PASSWORD: reallystrongpassword
   HIBERNATE_DDL: update
