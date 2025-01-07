@@ -15,7 +15,7 @@ public interface MovieHubAPIClient {
     @GetMapping("${application.api.path.base}${application.api.version}${application.api.path.movies}/{id}")
     Optional<MovieResponse> findMovieById(@PathVariable("id") String id);
 
-    @GetMapping("${}")
+    @GetMapping("${application.api.path.base}${application.api.version}${application.api.path.movies}")
     Optional<List<MovieResponse>> searchMovieByTitle(@RequestParam("title") String title,
                                                      @RequestParam(value = "page", required = false) Integer page,
                                                      @RequestParam(value = "limit", required = false) Integer limit);
