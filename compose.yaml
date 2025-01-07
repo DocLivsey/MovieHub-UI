@@ -1,9 +1,9 @@
 version: '3.9'
-x-spring-api-variables: &api-variables
-  HOST: http://localhost:8080
-  VERSION: v1.0
-  PATH_BASE: /api
-  PATH_MOVIES: /movies
+x-spring-ui-variables: &ui-variables
+  API_HOST: http://localhost:8080
+  API_VERSION: v1.0
+  API_BASE_PATH: /api
+  MOVIES_PATH: /movies
   DB_HOST: db
   DB_URL: jdbc:postgresql://db:5432/movie_hub_database
   POSTGRES_USER: postgres
@@ -21,7 +21,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8080"
-    environment: *api-variables
+    environment: *ui-variables
     depends_on:
       - db
 
