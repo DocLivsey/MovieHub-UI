@@ -21,7 +21,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8080"
-    environment: *api-variables
+    environment: *ui-variables
     depends_on:
       - db
 
