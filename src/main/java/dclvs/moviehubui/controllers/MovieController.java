@@ -1,9 +1,13 @@
 package dclvs.moviehubui.controllers;
 
-import lombok.AllArgsConstructor;
+import dclvs.moviehubui.clients.MovieHubAPIClient;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class MovieController {
+
+    private final MovieHubAPIClient movieHubAPIClient;
+
 }
