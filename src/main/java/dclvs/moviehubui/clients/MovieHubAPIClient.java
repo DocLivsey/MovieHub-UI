@@ -1,4 +1,4 @@
-package dclvs.moviehubui;
+package dclvs.moviehubui.clients;
 
 import dclvs.moviehubui.dto.MovieResponse;
 import org.springframework.cloud.openfeign.FeignClient;
