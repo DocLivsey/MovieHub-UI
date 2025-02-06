@@ -3,6 +3,7 @@ package dclvs.moviehubui.entities;
 import dclvs.moviehubui.dto.components.*;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,6 +16,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "movies")
 public class Movie {
 
     @Id
