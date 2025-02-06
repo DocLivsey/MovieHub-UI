@@ -1,9 +1,6 @@
 package dclvs.moviehubui.entities;
 
-import dclvs.moviehubui.dto.components.ExternalId;
-import dclvs.moviehubui.dto.components.Logo;
-import dclvs.moviehubui.dto.components.Rating;
-import dclvs.moviehubui.dto.components.ShortImage;
+import dclvs.moviehubui.dto.components.*;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -12,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import java.util.List;
 
 @Data
 @Entity
@@ -58,5 +56,22 @@ public class Movie {
 
     @Column(nullable = false)
     private ShortImage backdrop;
+
+    @Column(nullable = false)
+    private List<ItemName> genres;
+
+    @Column(nullable = false)
+    private List<ItemName> countries;
+
+    @Column(nullable = false)
+    private List<SeasonInfo> seasonsInfo;
+
+    @Column(nullable = false)
+    private CurrencyValue budget;
+
+    @Column(nullable = false)
+    private Fees fees;
+
+    private List<LinkedMovie> similarMovies;
 
 }
