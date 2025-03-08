@@ -16,7 +16,8 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    private ResponseEntity<?> findUserBy(Long Id) {
+    // TODO: in future, create an overloaded method for searching by Id, Email, Phone and etc and make it private
+    public ResponseEntity<?> findUserBy(Long Id) {
         if (Id == null)
             return ResponseEntity
                     .unprocessableEntity()
