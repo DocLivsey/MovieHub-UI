@@ -16,6 +16,10 @@ public class UserService {
 
     private final UserRepository userRepository;
 
+    public ResponseEntity<?> listAllUsers() {
+        return ResponseEntity.ok(userRepository.allUsers());
+    }
+
     // TODO: in future, create an overloaded method for searching by Id, Email, Phone and etc and make it private
     public ResponseEntity<?> findUserBy(Long Id) {
         if (Id == null)
