@@ -43,6 +43,8 @@ public class Movie {
     private String status;
 
     @Column(nullable = false)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "rating")
     private RatingEntity rating;
 
     private Integer movieLength;
@@ -56,9 +58,13 @@ public class Movie {
     private Logo logo;
 
     @Column(nullable = false)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "poster")
     private ShortImageEntity poster;
 
     @Column(nullable = false)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "backdrop")
     private ShortImageEntity backdrop;
 
     @Embedded
@@ -70,14 +76,22 @@ public class Movie {
     private List<ItemName> countries;
 
     @Column(nullable = false)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "seasons_info")
     private List<SeasonInfoEntity> seasonsInfo;
 
     @Column(nullable = false)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "budget")
     private CurrencyValueEntity budget;
 
     @Column(nullable = false)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "fees")
     private FeesEntity fees;
 
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "similar_movies")
     private List<LinkedMovieEntity> similarMovies;
 
 }
