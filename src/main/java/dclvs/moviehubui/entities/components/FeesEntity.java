@@ -1,6 +1,6 @@
 package dclvs.moviehubui.entities.components;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
