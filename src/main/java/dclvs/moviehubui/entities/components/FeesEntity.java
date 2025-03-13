@@ -14,16 +14,16 @@ public class FeesEntity {
     @GeneratedValue()
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "world")
     private CurrencyValueEntity world;
 
-    @OneToOne
-    @JoinColumn(name = "id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "russia")
     private CurrencyValueEntity russia;
 
-    @OneToOne
-    @JoinColumn(name = "id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "usa")
     private CurrencyValueEntity usa;
 
 }
