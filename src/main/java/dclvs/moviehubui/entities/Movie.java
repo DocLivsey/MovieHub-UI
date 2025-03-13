@@ -50,7 +50,7 @@ public class Movie {
 
     private String ratingMpaa;
 
-    private  Integer ageRating;
+    private Integer ageRating;
 
     @Column(nullable = false)
     private Logo logo;
