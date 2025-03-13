@@ -51,6 +51,7 @@ public class Movie {
 
     private Integer ageRating;
 
+    @Embedded
     @Column(nullable = false)
     private Logo logo;
 
