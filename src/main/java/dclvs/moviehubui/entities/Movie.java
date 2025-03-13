@@ -1,9 +1,9 @@
 package dclvs.moviehubui.entities;
 
 import dclvs.moviehubui.dto.components.*;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import dclvs.moviehubui.entities.components.ExternalIdEntity;
+import dclvs.moviehubui.entities.components.SeasonInfoEntity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,7 +24,9 @@ public class Movie {
     private Long id;
 
     @Column(unique = true)
-    private ExternalId externalId;
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "external_id")
+    private ExternalIdEntity externalId;
 
     private String name;
 
@@ -59,14 +61,16 @@ public class Movie {
     @Column(nullable = false)
     private ShortImage backdrop;
 
+    @Embedded
     @Column(nullable = false)
     private List<ItemName> genres;
 
+    @Embedded
     @Column(nullable = false)
     private List<ItemName> countries;
 
     @Column(nullable = false)
-    private List<SeasonInfo> seasonsInfo;
+    private List<SeasonInfoEntity> seasonsInfo;
 
     @Column(nullable = false)
     private CurrencyValue budget;
