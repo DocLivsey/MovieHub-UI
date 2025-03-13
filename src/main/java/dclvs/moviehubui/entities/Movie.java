@@ -1,8 +1,7 @@
 package dclvs.moviehubui.entities;
 
 import dclvs.moviehubui.dto.components.*;
-import dclvs.moviehubui.entities.components.ExternalIdEntity;
-import dclvs.moviehubui.entities.components.SeasonInfoEntity;
+import dclvs.moviehubui.entities.components.*;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -56,10 +55,10 @@ public class Movie {
     private Logo logo;
 
     @Column(nullable = false)
-    private ShortImage poster;
+    private ShortImageEntity poster;
 
     @Column(nullable = false)
-    private ShortImage backdrop;
+    private ShortImageEntity backdrop;
 
     @Embedded
     @Column(nullable = false)
@@ -73,10 +72,10 @@ public class Movie {
     private List<SeasonInfoEntity> seasonsInfo;
 
     @Column(nullable = false)
-    private CurrencyValue budget;
+    private CurrencyValueEntity budget;
 
     @Column(nullable = false)
-    private Fees fees;
+    private FeesEntity fees;
 
     private List<LinkedMovie> similarMovies;
 
