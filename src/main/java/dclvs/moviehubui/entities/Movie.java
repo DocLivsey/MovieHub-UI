@@ -43,7 +43,7 @@ public class Movie {
     private String status;
 
     @Column(nullable = false)
-    private Rating rating;
+    private RatingEntity rating;
 
     private Integer movieLength;
 
@@ -78,6 +78,6 @@ public class Movie {
     @Column(nullable = false)
     private FeesEntity fees;
 
-    private List<LinkedMovie> similarMovies;
+    private List<LinkedMovieEntity> similarMovies;
 
 }
