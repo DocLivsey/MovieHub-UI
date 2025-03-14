@@ -37,6 +37,7 @@ public class Movie {
 
     private String description;
 
+    @Column(name = "short_description")
     private String shortDescription;
 
     @Column(nullable = false)
@@ -47,10 +48,13 @@ public class Movie {
     @JoinColumn(name = "rating")
     private RatingEntity rating;
 
+    @Column(name = "movie_length")
     private Integer movieLength;
 
+    @Column(name = "rating_mpaa")
     private String ratingMpaa;
 
+    @Column(name = "age_rating")
     private Integer ageRating;
 
     @Embedded
