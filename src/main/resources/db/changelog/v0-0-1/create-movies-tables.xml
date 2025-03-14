@@ -5,6 +5,8 @@
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
     <changeSet id="create-movies-tables" author="doclivsey">
+
+<!--   TODO: All LONG entities fields to BIGINT field in datasource     -->
         <createTable tableName="movies">
             <column name="id" type="int" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
