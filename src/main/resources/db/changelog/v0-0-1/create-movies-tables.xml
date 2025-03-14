@@ -68,10 +68,10 @@
             <column name="imdb" type="varchar(25)"/>
             <column name="tmdb" type="int"/>
         </createTable>
-        <addForeignKeyConstraint baseTableName=""
-                                 baseColumnNames=""
-                                 constraintName=""
-                                 referencedTableName=""
-                                 referencedColumnNames=""/>
+        <addForeignKeyConstraint baseTableName="movies"
+                                 baseColumnNames="external_id"
+                                 referencedTableName="external_ids"
+                                 referencedColumnNames="id"
+                                 constraintName="fk_movie_external_id"/>
     </changeSet>
 </databaseChangeLog>
