@@ -1,5 +1,6 @@
 package dclvs.moviehubui.entities.components;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -18,6 +19,7 @@ public class ExternalIdEntity {
     @GeneratedValue()
     private Long id;
 
+    @Column(name = "kinopoisk_HD")
     private String kpHD;
 
     private String imdb;
