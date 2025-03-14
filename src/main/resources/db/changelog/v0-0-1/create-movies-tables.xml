@@ -57,5 +57,14 @@
                 <constraints unique="true"/>
             </column>
         </createTable>
+
+        <createTable tableName="external_ids">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="kinopoisk_HD" type="varchar(50)"/>
+            <column name="imdb" type="varchar(25)"/>
+            <column name="tmdb" type="int"/>
+        </createTable>
     </changeSet>
 </databaseChangeLog>
