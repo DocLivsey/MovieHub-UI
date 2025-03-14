@@ -71,12 +71,18 @@ public class Movie {
     @JoinColumn(name = "backdrop")
     private ShortImageEntity backdrop;
 
-    @Embedded
+    @ElementCollection
     @Column(nullable = false)
+    @CollectionTable(
+            name = "movie_genres",
+            joinColumns = @JoinColumn(name = "movie_id"))
     private List<ItemName> genres;
 
-    @Embedded
+    @ElementCollection
     @Column(nullable = false)
+    @CollectionTable(
+            name = "movie_countries",
+            joinColumns = @JoinColumn(name = "movie_id"))
     private List<ItemName> countries;
 
     @Column(nullable = false)
