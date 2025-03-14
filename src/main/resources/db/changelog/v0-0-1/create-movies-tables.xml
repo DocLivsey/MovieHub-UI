@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create-movies-tables" author="doclivsey">
+        <createTable tableName="movies">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="external_id" type="int">
+                <constraints unique="true"/>
+            </column>
+            <column name="name" type="varchar(500)"/>
+            <column name="type" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="year" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(500)"/>
+            <column name="short_description" type="varchar(100)"/>
+            <column name="status" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rating" type="int">
+                <constraints unique="true"/>
+            </column>
+            <column name="rating_mpaa" type="varchar(10)"/>
+            <column name="age_rating" type="int"/>
+            <column name="logo_url" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="poster" type="int">
+                <constraints unique="true"/>
+            </column>
+            <column name="backdrop" type="int">
+                <constraints unique="true"/>
+            </column>
+            <column name="logo_url" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
