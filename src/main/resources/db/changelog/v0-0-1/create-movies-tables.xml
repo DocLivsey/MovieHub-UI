@@ -41,6 +41,21 @@
             <column name="logo_url" type="varchar(250)">
                 <constraints nullable="false"/>
             </column>
+            <column name="genres" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="countries" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="budget" type="int">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="fees" type="int">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="similar_movies" type="int">
+                <constraints unique="true"/>
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>
