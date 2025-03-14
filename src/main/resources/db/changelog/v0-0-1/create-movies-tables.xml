@@ -66,5 +66,10 @@
             <column name="imdb" type="varchar(25)"/>
             <column name="tmdb" type="int"/>
         </createTable>
+        <addForeignKeyConstraint baseTableName=""
+                                 baseColumnNames=""
+                                 constraintName=""
+                                 referencedTableName=""
+                                 referencedColumnNames=""/>
     </changeSet>
 </databaseChangeLog>
