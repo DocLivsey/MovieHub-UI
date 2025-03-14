@@ -73,5 +73,22 @@
                                  referencedTableName="external_ids"
                                  referencedColumnNames="id"
                                  constraintName="fk_movie_external_id"/>
+
+        <createTable tableName="ratings">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="kp" type="float"/>
+            <column name="imdb" type="float"/>
+            <column name="tmdb" type="float"/>
+            <column name="film_critics" type="float"/>
+            <column name="russian_film_critics" type="float"/>
+            <column name="await" type="float"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="movies"
+                                 baseColumnNames="rating"
+                                 referencedTableName="ratings"
+                                 referencedColumnNames="id"
+                                 constraintName="fk_movie_rating_id"/>
     </changeSet>
 </databaseChangeLog>
