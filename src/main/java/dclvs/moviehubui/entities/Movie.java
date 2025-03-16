@@ -11,6 +11,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.util.List;
 
+// TODO: in future need to use jakarta's Entity
+
 @Data
 @Entity
 @NoArgsConstructor
