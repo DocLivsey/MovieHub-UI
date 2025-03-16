@@ -29,6 +29,7 @@
             <column name="rating" type="int">
                 <constraints unique="true"/>
             </column>
+            <column name="movie_length" type="int"/>
             <column name="rating_mpaa" type="varchar(10)"/>
             <column name="age_rating" type="int"/>
             <column name="logo_url" type="varchar(250)">
