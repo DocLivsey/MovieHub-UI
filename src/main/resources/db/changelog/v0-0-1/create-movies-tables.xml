@@ -104,5 +104,10 @@
                                  referencedTableName="short_images"
                                  referencedColumnNames="id"
                                  constraintName="fk_movie_poster_id"/>
+        <addForeignKeyConstraint baseTableName="movies"
+                                 baseColumnNames="backdrop"
+                                 referencedTableName="short_images"
+                                 referencedColumnNames="id"
+                                 constraintName="fk_movie_backdrop_id"/>
     </changeSet>
 </databaseChangeLog>
