@@ -91,5 +91,18 @@
                                  referencedTableName="ratings"
                                  referencedColumnNames="id"
                                  constraintName="fk_movie_rating_id"/>
+
+        <createTable tableName="short_images">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="url" type="varchar(512)"/>
+            <column name="preview_url" type="varchar(512)"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="movies"
+                                 baseColumnNames="poster"
+                                 referencedTableName="short_images"
+                                 referencedColumnNames="id"
+                                 constraintName="fk_movie_poster_id"/>
     </changeSet>
 </databaseChangeLog>
