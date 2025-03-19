@@ -8,4 +8,5 @@
         <tagDatabase tag="v0-0-1"/>
     </changeSet>
     <include file="create-user-table.xml" relativeToChangelogFile="true"/>
+    <include relativeToChangelogFile="true" file="create-movies-tables.xml"/>
 </databaseChangeLog>
