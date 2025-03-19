@@ -109,5 +109,98 @@
                                  referencedTableName="short_images"
                                  referencedColumnNames="id"
                                  constraintName="fk_movie_backdrop_id"/>
+
+        <createTable tableName="seasons">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="number" type="int"/>
+            <column name="episodes_count" type="int"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="movies"
+                                 baseColumnNames="seasons_info"
+                                 referencedTableName="seasons"
+                                 referencedColumnNames="id"
+                                 constraintName="fk_movie_seasons_info_id"/>
+        
+        <createTable tableName="currencies">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="value" type="bigint"/>
+            <column name="currency" type="varchar(25)"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="movies"
+                                 baseColumnNames="budget"
+                                 referencedTableName="currencies"
+                                 referencedColumnNames="id"
+                                 constraintName="fk_movie_budget_id"/>
+
+        <createTable tableName="fees">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="world" type="bigint">
+                <constraints unique="true"/>
+            </column>
+            <column name="russia" type="bigint">
+                <constraints unique="true"/>
+            </column>
+            <column name="usa" type="bigint">
+                <constraints unique="true"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="movies"
+                                 baseColumnNames="fees"
+                                 referencedTableName="fees"
+                                 referencedColumnNames="id"
+                                 constraintName="fk_movie_fees_id"/>
+        <addForeignKeyConstraint baseTableName="fees"
+                                 baseColumnNames="world"
+                                 referencedTableName="currencies"
+                                 referencedColumnNames="id"
+                                 constraintName="fk_fees_world_id"/>
+        <addForeignKeyConstraint baseTableName="fees"
+                                 baseColumnNames="russia"
+                                 referencedTableName="currencies"
+                                 referencedColumnNames="id"
+                                 constraintName="fk_fees_russia_id"/>
+        <addForeignKeyConstraint baseTableName="fees"
+                                 baseColumnNames="usa"
+                                 referencedTableName="currencies"
+                                 referencedColumnNames="id"
+                                 constraintName="fk_fees_usa_id"/>
+
+        <createTable tableName="similar_movies">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(500)"/>
+            <column name="en_name" type="varchar(500)"/>
+            <column name="alternative_name" type="varchar(500)"/>
+            <column name="type" type="varchar(50)"/>
+            <column name="poster" type="bigint">
+                <constraints unique="true"/>
+            </column>
+            <column name="rating" type="bigint">
+                <constraints unique="true"/>
+            </column>
+            <column name="year" type="int"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="movies"
+                                 baseColumnNames="similar_movies"
+                                 referencedTableName="similar_movies"
+                                 referencedColumnNames="id"
+                                 constraintName="fk_movie_similar_movie_id"/>
+        <addForeignKeyConstraint baseTableName="similar_movies"
+                                 baseColumnNames="poster"
+                                 referencedTableName="short_images"
+                                 referencedColumnNames="id"
+                                 constraintName="fk_similar_movie_poster_id"/>
+        <addForeignKeyConstraint baseTableName="similar_movies"
+                                 baseColumnNames="rating"
+                                 referencedTableName="ratings"
+                                 referencedColumnNames="id"
+                                 constraintName="fk_similar_movie_rating_id"/>
     </changeSet>
 </databaseChangeLog>
