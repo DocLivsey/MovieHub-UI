@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 @Data
 @Entity
 @Accessors(chain = true)
-@Table(name = "currency")
+@Table(name = "currencies")
 public class CurrencyValueEntity {
 
     @Id
