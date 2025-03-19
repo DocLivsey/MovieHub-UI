@@ -41,9 +41,6 @@
             <column name="backdrop" type="int">
                 <constraints unique="true"/>
             </column>
-            <column name="logo_url" type="varchar(250)">
-                <constraints nullable="false"/>
-            </column>
             <column name="genres" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
