@@ -87,14 +87,12 @@ public class Movie {
             joinColumns = @JoinColumn(name = "movie_id"))
     private List<ItemName> countries;
 
-    @Column(nullable = false)
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "seasons_info")
+    @JoinColumn(name = "seasons_info", nullable = false)
     private List<SeasonInfoEntity> seasonsInfo;
 
-    @Column(nullable = false)
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "budget")
+    @JoinColumn(name = "budget", nullable = false)
     private CurrencyValueEntity budget;
 
     @Column(nullable = false)
