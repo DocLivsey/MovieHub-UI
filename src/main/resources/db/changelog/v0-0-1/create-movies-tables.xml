@@ -53,9 +53,6 @@
             <column name="fees" type="int">
                 <constraints nullable="false" unique="true"/>
             </column>
-            <column name="similar_movies" type="int">
-                <constraints unique="true"/>
-            </column>
         </createTable>
 
         <createTable tableName="external_ids">
@@ -111,12 +108,15 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
+            <column name="movie_id" type="bigint">
+                <constraints unique="true" nullable="true"/>
+            </column>
             <column name="number" type="int"/>
             <column name="episodes_count" type="int"/>
         </createTable>
-        <addForeignKeyConstraint baseTableName="movies"
-                                 baseColumnNames="seasons_info"
-                                 referencedTableName="seasons"
+        <addForeignKeyConstraint baseTableName="seasons"
+                                 baseColumnNames="movie_id"
+                                 referencedTableName="movies"
                                  referencedColumnNames="id"
                                  constraintName="fk_movie_seasons_info_id"/>
         
@@ -172,6 +172,9 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
+            <column name="movie_id" type="bigint">
+                <constraints unique="true" nullable="true"/>
+            </column>
             <column name="name" type="varchar(500)"/>
             <column name="en_name" type="varchar(500)"/>
             <column name="alternative_name" type="varchar(500)"/>
@@ -184,9 +187,9 @@
             </column>
             <column name="year" type="int"/>
         </createTable>
-        <addForeignKeyConstraint baseTableName="movies"
-                                 baseColumnNames="similar_movies"
-                                 referencedTableName="similar_movies"
+        <addForeignKeyConstraint baseTableName="similar_movies"
+                                 baseColumnNames="movie_id"
+                                 referencedTableName="movies"
                                  referencedColumnNames="id"
                                  constraintName="fk_movie_similar_movie_id"/>
         <addForeignKeyConstraint baseTableName="similar_movies"
