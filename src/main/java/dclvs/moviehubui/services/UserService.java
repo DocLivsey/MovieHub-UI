@@ -29,9 +29,7 @@ public class UserService {
 
         User user = userRepository
                 .findById(Id)
-                .orElseThrow(
-                        () -> new HttpClientErrorException(HttpStatus.NOT_FOUND)
-                );
+                .orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
 
         return ResponseEntity.ok(user);
     }
