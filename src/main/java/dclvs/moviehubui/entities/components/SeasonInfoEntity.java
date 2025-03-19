@@ -1,9 +1,6 @@
 package dclvs.moviehubui.entities.components;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -21,6 +18,7 @@ public class SeasonInfoEntity {
 
     private Integer number;
 
+    @Column(name = "episodes_count")
     private Integer episodesCount;
 
 }
