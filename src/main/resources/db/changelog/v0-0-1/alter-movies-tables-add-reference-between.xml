@@ -6,7 +6,7 @@
 
     <changeSet id="0" author="DocLivsey">
         <addColumn tableName="movies">
-            <column name="user_id"/>
+            <column name="user_id" type="bigint"/>
         </addColumn>
         <addForeignKeyConstraint baseTableName="movies"
                                  baseColumnNames="user_id"
