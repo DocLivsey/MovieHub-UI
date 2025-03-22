@@ -20,4 +20,7 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
     @Query("select m from Movie m where m.user = :user")
     Optional<List<Movie>> findAllUserMovies(@Param("user") User user);
 
+    void deleteUserMovie(@Param("id") Long id,
+                         @Param("user") User user);
+
 }
