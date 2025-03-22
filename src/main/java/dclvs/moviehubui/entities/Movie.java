@@ -28,9 +28,8 @@ public class Movie {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Column(unique = true)
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "external_id")
+    @JoinColumn(name = "external_id", unique = true)
     private ExternalIdEntity externalId;
 
     private String name;

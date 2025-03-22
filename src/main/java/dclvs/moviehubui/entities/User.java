@@ -33,7 +33,7 @@ public class User {
     @OneToMany(
             fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
-    @Column(name = "favorite_movies")
+    @JoinColumn(name = "favorite_movies")
     private List<Movie> favoriteMovies;
 
     @Column(name = "favorite_director")
