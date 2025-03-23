@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Slf4j
 @Service
@@ -24,6 +25,28 @@ public class MovieService {
         return movies.isEmpty()
                 ? ResponseEntity.noContent().build()
                 : ResponseEntity.ok(movies);
+    }
+
+    public ResponseEntity<?> movieByKinopoiskId(Long id) {
+        AtomicReference<ResponseEntity<?>> responseEntity = new AtomicReference<>();
+        movieRepository
+                .findMovieByKinopoiskId(id)
+                .ifPresentOrElse(
+                    movie ->
+                            responseEntity
+                            .set(
+                                ResponseEntity
+                                    .ok(movie)
+                            ),
+                    () ->
+                            responseEntity
+                            .set(
+                                ResponseEntity
+                                    .notFound()
+                                    .build()
+                            )
+                );
+        return responseEntity.get();
     }
 
 }
