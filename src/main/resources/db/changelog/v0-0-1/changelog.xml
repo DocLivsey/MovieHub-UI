@@ -10,4 +10,5 @@
     <include file="create-user-table.xml" relativeToChangelogFile="true"/>
     <include relativeToChangelogFile="true" file="create-movies-tables.xml"/>
     <include relativeToChangelogFile="true" file="alter-movies-tables-add-reference-between.xml"/>
+    <include relativeToChangelogFile="true" file="alter-movies-table-add-kinopoisk-id.xml"/>
 </databaseChangeLog>

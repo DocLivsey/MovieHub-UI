@@ -28,6 +28,11 @@ public class Movie {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Column(name = "kinopoisk_id",
+            nullable = false,
+            unique = true)
+    private Long kinopoiskId;
+
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "external_id", unique = true)
     private ExternalIdEntity externalId;
