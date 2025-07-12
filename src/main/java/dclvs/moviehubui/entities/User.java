@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
 
 import java.util.Calendar;
+import java.util.List;
 
 @Data
 @Entity
@@ -28,6 +29,12 @@ public class User {
 
     @Temporal(TemporalType.DATE)
     private Calendar birthdate;
+
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    @JoinColumn(name = "favorite_movies")
+    private List<Movie> favoriteMovies;
 
     @Column(name = "favorite_director")
     private String favoriteDirector;

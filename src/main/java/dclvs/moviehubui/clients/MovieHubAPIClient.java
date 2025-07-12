@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface MovieHubAPIClient {
 
     @GetMapping("${application.api.path.base}${application.api.version}${application.api.path.movies}/{id}")
-    Optional<MovieResponse> findMovieById(@PathVariable("id") String id);
+    Optional<MovieResponse> findMovieById(@PathVariable("id") Long id);
 
     @GetMapping("${application.api.path.base}${application.api.version}${application.api.path.movies}")
     Optional<List<MovieResponse>> searchMovieByTitle(@RequestParam("title") String title,

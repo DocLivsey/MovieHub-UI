@@ -7,8 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import java.util.List;
 
 // TODO: in future need to use jakarta's Entity
@@ -24,9 +24,17 @@ public class Movie {
     @GeneratedValue()
     private Long id;
 
-    @Column(unique = true)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @Column(name = "kinopoisk_id",
+            nullable = false,
+            unique = true)
+    private Long kinopoiskId;
+
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "external_id")
+    @JoinColumn(name = "external_id", unique = true)
     private ExternalIdEntity externalId;
 
     private String name;
@@ -45,9 +53,8 @@ public class Movie {
     @Column(nullable = false)
     private String status;
 
-    @Column(nullable = false)
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "rating")
+    @JoinColumn(name = "rating", nullable = false)
     private RatingEntity rating;
 
     @Column(name = "movie_length")
@@ -63,14 +70,12 @@ public class Movie {
     @Column(nullable = false)
     private Logo logo;
 
-    @Column(nullable = false)
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "poster")
+    @JoinColumn(name = "poster", nullable = false)
     private ShortImageEntity poster;
 
-    @Column(nullable = false)
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "backdrop")
+    @JoinColumn(name = "backdrop", nullable = false)
     private ShortImageEntity backdrop;
 
     @ElementCollection
@@ -95,9 +100,8 @@ public class Movie {
     @JoinColumn(name = "budget", nullable = false)
     private CurrencyValueEntity budget;
 
-    @Column(nullable = false)
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "fees")
+    @JoinColumn(name = "fees", nullable = false)
     private FeesEntity fees;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
