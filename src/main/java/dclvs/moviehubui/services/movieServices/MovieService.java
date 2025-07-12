@@ -1,4 +1,4 @@
-package dclvs.moviehubui.services;
+package dclvs.moviehubui.services.movieServices;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
