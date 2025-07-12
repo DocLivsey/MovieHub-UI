@@ -1,6 +1,6 @@
 package dclvs.moviehubui.controllers;
 
-import dclvs.moviehubui.services.MovieService;
+import dclvs.moviehubui.services.movieServices.MovieService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RestController;
